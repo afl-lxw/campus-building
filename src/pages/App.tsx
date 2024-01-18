@@ -1,33 +1,45 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
-import './App.less'
+// App.tsx
+import React from 'react'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import Main from '@/pages/main'
+import Login from '@/pages/login'
+import Notice from '@/pages/notice'
+import Search from '@/pages/search'
+import Publish from '@/pages/publish'
+import Profile from '@/pages/profile'
 
 
+import { useAuth } from '@/hooks' // <- 这是一个示例hooks，你可以在这里处理你的认证逻辑
 
-function App() {
-  const [count, setCount] = useState(0)
+const App: React.FC = () => {
+  const isAuthenticated = useAuth() // <- 这会返回一个布尔值来决定用户是否已经认证
 
+  if (!isAuthenticated) {
+    // 如果用户未认证，重定向他到登录页面
+    return <Login>{/* 敬请自定义你的登录组件 */}</Login>
+  }
+
+  // 如果用户已认证，渲染你的路由组件
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
- 
-      </div>
-      <h1>Vite + React</h1> 
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p> 
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Router>
+      <Routes>
+        <Route path='/' element={<Main />}>
+          {/* 在这里添加 'Home' 页面的子路由 */}
+        </Route>
+        <Route path='/search' element={<Search />}>
+          {/* 在这里添加 'NavTab' 页面的子路由 */}
+        </Route>
+        <Route path='/profile' element={<Profile />}>
+          {/* 在这里添加 'SearchNavTab' 页面的子路由 */}
+        </Route>
+        <Route path='/notice' element={ <Notice/> }>
+          {/* 在这里添加 'MessageNavTab' 页面的子路由 */}
+        </Route>
+        <Route path='/publish' element={<Publish />}>
+          {/* 在这里添加 'publish' 页面的子路由 */}
+        </Route>
+      </Routes>
+    </Router>
   )
 }
 
