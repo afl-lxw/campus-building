@@ -2,7 +2,7 @@
 
 import React from 'react'
 import type { FC } from 'react'
-import { NavBar, TabBar } from 'antd-mobile'
+import {  TabBar } from 'antd-mobile'
 import {
   Route,
   Routes,
@@ -67,9 +67,7 @@ const HomePage: React.FC = () => {
   return (
     // <Router initialEntries={['/home']}>
       <div className="app">
-        <div className="top">
-          <NavBar>主页面</NavBar>
-        </div>
+  
         <div className="body">
         <Routes>
           <Route path="/publish" element={<Publish />} />
