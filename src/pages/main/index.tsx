@@ -1,10 +1,102 @@
-import React from "react"
 
-const Main: React.FC = () => {
-  return <>
-    Main
-  </>
+
+import React from 'react'
+import type { FC } from 'react'
+import { NavBar, TabBar } from 'antd-mobile'
+import {
+  Route,
+  Routes,
+  useNavigate,
+  useLocation,
+  MemoryRouter as Router,
+} from 'react-router-dom'
+import {
+  AppOutline,
+  MessageOutline,
+  UnorderedListOutline,
+  UserOutline,
+} from 'antd-mobile-icons'
+import Notice from '@/pages/notice'
+import Search from '@/pages/search'
+import Publish from '@/pages/publish'
+import Profile from '@/pages/profile'
+import './main.less'
+
+const Bottom: FC = () => {
+  const history = useNavigate()
+  const location = useLocation()
+  const { pathname } = location
+
+  const setRouteActive = (value: string) => {
+    history(value);
+  }
+
+  const tabs = [
+    {
+      key: '/publish',
+      title: '首页',
+      icon: <AppOutline />,
+    },
+    {
+      key: '/search',
+      title: '搜索',
+      icon: <UnorderedListOutline />,
+    },
+    {
+      key: '/notice',
+      title: '消息',
+      icon: <MessageOutline />,
+    },
+    {
+      key: '/profile',
+      title: '我的',
+      icon: <UserOutline />,
+    },
+  ]
+
+  return (
+    <TabBar activeKey={pathname} onChange={value => setRouteActive(value)}>
+      {tabs.map(item => (
+        <TabBar.Item key={item.key} icon={item.icon} title={item.title} />
+      ))}
+    </TabBar>
+  )
+}
+
+const HomePage: React.FC = () => {
+  return (
+    // <Router initialEntries={['/home']}>
+      <div className="app">
+        <div className="top">
+          <NavBar>主页面</NavBar>
+        </div>
+        {/* <div className="body">
+          <Routes>
+            <Route path='/publish'>
+              <Publish />
+            </Route>
+            <Route path='/search'>
+              <Search />
+            </Route>
+            <Route path='/notice'>
+              <Notice />
+            </Route>
+            <Route  path='/me'>
+              <Profile />
+            </Route>
+          </Routes>
+        </div> */}
+        <div className="bottom">
+          <Bottom />
+        </div>
+      </div>
+    // </Router>
+  )
 }
 
 
-export default Main
+
+
+
+
+export default HomePage
