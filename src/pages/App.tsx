@@ -25,18 +25,18 @@ const App: React.FC = () => {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
-        <Route path='/' element={<Main />}>
+        <Route path='*' element={<Main />}>
           {/* 在这里添加 'Home' 页面的子路由 */}
-          <Route path='/search' element={<Search />}>
+          <Route path='search' element={<Search />}>
             {/* 在这里添加 'NavTab' 页面的子路由 */}
           </Route>
-          <Route path='/profile' element={<Profile />}>
+          <Route path='profile' element={<Profile />}>
             {/* 在这里添加 'SearchNavTab' 页面的子路由 */}
           </Route>
-          <Route path='/notice' element={<Notice />}>
+          <Route path='notice' element={<Notice />}>
             {/* 在这里添加 'MessageNavTab' 页面的子路由 */}
           </Route>
-          <Route path='/publish' element={<Publish />}>
+          <Route path='publish' element={<Publish />}>
             {/* 在这里添加 'publish' 页面的子路由 */}
           </Route>
         </Route>

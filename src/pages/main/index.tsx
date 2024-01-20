@@ -70,22 +70,14 @@ const HomePage: React.FC = () => {
         <div className="top">
           <NavBar>主页面</NavBar>
         </div>
-        {/* <div className="body">
-          <Routes>
-            <Route path='/publish'>
-              <Publish />
-            </Route>
-            <Route path='/search'>
-              <Search />
-            </Route>
-            <Route path='/notice'>
-              <Notice />
-            </Route>
-            <Route  path='/me'>
-              <Profile />
-            </Route>
-          </Routes>
-        </div> */}
+        <div className="body">
+        <Routes>
+          <Route path="/publish" element={<Publish />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/notice" element={<Notice />} />
+          <Route path="/profile" element={<Profile />} />
+        </Routes>
+        </div>
         <div className="bottom">
           <Bottom />
         </div>
