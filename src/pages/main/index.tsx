@@ -2,13 +2,12 @@
 
 import React from 'react'
 import type { FC } from 'react'
-import {  TabBar } from 'antd-mobile'
+import { TabBar, SafeArea } from 'antd-mobile'
 import {
   Route,
   Routes,
   useNavigate,
   useLocation,
-  MemoryRouter as Router,
 } from 'react-router-dom'
 import {
   AppOutline,
@@ -66,20 +65,22 @@ const Bottom: FC = () => {
 const HomePage: React.FC = () => {
   return (
     // <Router initialEntries={['/home']}>
-      <div className="app">
-  
-        <div className="body">
+    <div className="app">
+      <div className="body">
         <Routes>
           <Route path="/publish" element={<Publish />} />
           <Route path="/search" element={<Search />} />
           <Route path="/notice" element={<Notice />} />
           <Route path="/profile" element={<Profile />} />
         </Routes>
-        </div>
-        <div className="bottom">
-          <Bottom />
-        </div>
       </div>
+      <div className="bottom">
+        <Bottom />
+      </div>
+      <div style={{ background: '#ffcfac' }}>
+        <SafeArea position='bottom' />
+      </div>
+    </div>
     // </Router>
   )
 }

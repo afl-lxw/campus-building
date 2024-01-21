@@ -14,7 +14,7 @@ import { useAuth } from '@/hooks' // <- 这是一个示例hooks，你可以在�
 const App: React.FC = () => {
   const isAuthenticated = useAuth() // <- 这会返回一个布尔值来决定用户是否已经认证
 
-  if (!isAuthenticated) {
+  if (isAuthenticated) {
     // 如果用户未认证，重定向他到登录页面
     return <Login>{/* 敬请自定义你的登录组件 */}</Login>
   }
