@@ -1,6 +1,6 @@
 
 
-import React from 'react'
+import React, { useEffect } from 'react'
 import type { FC } from 'react'
 import { TabBar, SafeArea } from 'antd-mobile'
 import {
@@ -20,6 +20,8 @@ import Search from '@/pages/search'
 import Publish from '@/pages/publish'
 import Profile from '@/pages/profile'
 import './main.less'
+import queryString from 'query-string'
+import config from '@/config'
 
 const Bottom: FC = () => {
   const history = useNavigate()
@@ -63,6 +65,24 @@ const Bottom: FC = () => {
 }
 
 const HomePage: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // 检查 URL 中是否包含 code 参数
+    const values = queryString.parse(location.search);
+    console.log('values:', values);
+
+    if (!values.code) {
+      // 如果没有 code，重定向到微信授权 URL
+      const redirectUri = encodeURIComponent(window.location.href);  //snsapi_userinfo
+      window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${config.TestAppID}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect`;
+    } else {
+      // 如果有 code，你可以在这里添加获取 access_token 和 openid 的代码
+      console.log('Code:', values.code);
+      // ...
+    }
+  }, [location]);
+
   return (
     // <Router initialEntries={['/home']}>
     <div className="app">
