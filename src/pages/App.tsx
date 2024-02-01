@@ -8,6 +8,7 @@ import Search from '@/pages/search'
 import Publish from '@/pages/publish'
 import Profile from '@/pages/profile'
 import LoginPage from '@/pages/login'
+import Discover from '@/pages/discover'
 
 import { useAuth } from '@/hooks' // <- 这是一个示例hooks，你可以在这里处理你的认证逻辑
 
@@ -37,6 +38,9 @@ const App: React.FC = () => {
             {/* 在这里添加 'MessageNavTab' 页面的子路由 */}
           </Route>
           <Route path='publish' element={<Publish />}>
+            {/* 在这里添加 'publish' 页面的子路由 */}
+          </Route>
+          <Route path='discover' element={<Discover />}>
             {/* 在这里添加 'publish' 页面的子路由 */}
           </Route>
         </Route>
