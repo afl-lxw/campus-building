@@ -5,7 +5,7 @@ import { NavBar, } from 'antd-mobile'
 
 const Discover: React.FC = () => {
   return <div
-    className="discover-container"
+    className="discover-container "
   >    
     <NavBar
       back={null}
