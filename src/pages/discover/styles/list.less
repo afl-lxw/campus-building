@@ -1,0 +1,65 @@
+.list-container{
+  min-height: 140px;
+  padding: 10px;
+  box-sizing: border-box;
+  background: #cbc5c5;
+  .list-header{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+
+    .user-img{
+      img{
+        width: 30px;
+        height: 30px;
+        border-radius: 30px;
+      }
+    }
+    .user-desc{
+      flex: 1;
+      margin-left: 10px;
+      .name{
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .organization{
+        font-size: 12px;
+        color: #999;
+      }
+    }
+
+   
+  }
+  .context{
+    padding: 10px 0;
+  }
+   .list-menu{
+      display: flex;
+      align-items: center;
+      margin-top: 10px;
+      .user-comment{
+        flex: 1;
+        .ant-input{
+          background: #f6f6f6;
+          width: 100%;
+          border: none;
+          text-align: center;
+        }
+      }
+      .user-havior{
+        display: flex;
+        align-items: center;
+        width: 50%;
+        justify-content: space-around;
+        .havior{
+          display: flex;
+          align-items: center;
+          .havior-num{
+            margin-left: 5px;
+            font-size: 12px;
+            font-weight: 400;
+          }
+        }
+      }
+    }
+}

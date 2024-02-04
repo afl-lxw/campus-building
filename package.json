@@ -11,12 +11,19 @@
   },
   "dependencies": {
     "ahooks": "^3.7.8",
+    "antd": "^5.14.0",
     "antd-mobile": "^5.34.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.21.3"
   },
   "devDependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.5.1",
+    "@fortawesome/free-brands-svg-icons": "^6.5.1",
+    "@fortawesome/free-regular-svg-icons": "^6.5.1",
+    "@fortawesome/free-solid-svg-icons": "^6.5.1",
+    "@fortawesome/react-fontawesome": "^0.2.0",
+    "@types/axios": "^0.14.0",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@types/react-router-dom": "^5.3.3",
