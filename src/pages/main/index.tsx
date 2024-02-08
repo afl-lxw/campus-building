@@ -43,11 +43,13 @@ const HomePage: React.FC = () => {
           <Route path="/profile" element={<Profile />} />
         </Routes>
       </div>
-      <div className="bottom">
-        <TabBarBottom />
-      </div>
-      <div style={{ background: '#FFFFFF' }}>
-        <SafeArea position='bottom' />
+      <div className='nav'>
+        <div className="bottom">
+          <TabBarBottom />
+        </div>
+        <div style={{ background: '#FFFFFF' }}>
+          <SafeArea position='bottom' />
+        </div>
       </div>
     </div>
     // </Router>
