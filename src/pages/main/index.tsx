@@ -21,16 +21,16 @@ import config from '@/config'
 const HomePage: React.FC = () => {
   const location = useLocation();
 
-  // useEffect(() => {
-  //   const values = queryString.parse(location.search);
+  useEffect(() => {
+    const values = queryString.parse(location.search);
 
-  //   if (!values.code) {
-  //     const redirectUri = encodeURIComponent(window.location.href);  //snsapi_userinfo
-  //     window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${config.TestAppID}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect`;
-  //   } else {
-  //     console.log('Code:', values.code);
-  //   }
-  // }, [location]);
+    if (!values.code) {
+      const redirectUri = encodeURIComponent(window.location.href);  //snsapi_userinfo   snsapi_base
+      window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${config.TestAppID}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect`;
+    } else {
+      console.log('Code:', values.code);
+    }
+  }, [location]);
 
   return (
     // <Router initialEntries={['/home']}>
