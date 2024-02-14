@@ -41,7 +41,7 @@ const Discover: React.FC = () => {
       >
         <List style={{ minHeight: '100vh' }}>
           {data.map((item: any, index: number) => (
-            <DiscoverList data={index} ></DiscoverList>
+            <DiscoverList data={index} key={index}></DiscoverList>
           ))}
         </List>
         <InfiniteScroll loadMore={loadMore} hasMore={hasMore} />

@@ -50,11 +50,12 @@ const DiscoverList: React.FC<ListTypeProps> = (props) => {
       </div>
       {/* <Skeleton.Paragraph lineCount={3} animated  /> */}
       <div className="context-img-list">
-        {
+        {/* {
           ImgList.map((item: string, index: number) => {
             return <img className="context-img" src={item} key={index} alt="" />
           })
-        }
+        } */}
+        <img className="context-img-only" src={ImgList[0]}  alt="" />
       </div>
     </div>
 
