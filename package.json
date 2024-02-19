@@ -23,6 +23,7 @@
     "@fortawesome/free-regular-svg-icons": "^6.5.1",
     "@fortawesome/free-solid-svg-icons": "^6.5.1",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@tarojs/taro": "^3.6.23",
     "@types/axios": "^0.14.0",
     "@types/node": "^20.11.16",
     "@types/qs": "^6.9.11",

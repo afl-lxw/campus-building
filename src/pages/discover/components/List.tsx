@@ -6,8 +6,9 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsis, faHeart, faStar, faShare } from '@fortawesome/free-solid-svg-icons';
 import { Input } from 'antd';
 import { Skeleton } from 'antd-mobile'
+import { useNavigate } from 'react-router-dom';
 
-const ImgList : string[] = [
+const ImgList: string[] = [
   'https://picsum.photos/id/1018/600/300',
   'https://picsum.photos/id/1015/300/300',
   'https://picsum.photos/id/1019/600/300',
@@ -30,7 +31,13 @@ type ListTypeProps = {
 }
 
 const DiscoverList: React.FC<ListTypeProps> = (props) => {
-  return <div className="list-container w-full bg-white">
+  const navigate = useNavigate();
+  const goDetails = () => {
+    console.log('props.data', props.data)
+    navigate(`/discover/${props.data}`);
+  }
+
+  return <div className="list-container w-full bg-white" onClick={goDetails} >
     <div className=" list-header" >
       <div className="user-img">
         <img className="img" src={userImg} alt="" />
@@ -55,7 +62,7 @@ const DiscoverList: React.FC<ListTypeProps> = (props) => {
             return <img className="context-img" src={item} key={index} alt="" />
           })
         } */}
-        <img className="context-img-only" src={ImgList[0]}  alt="" />
+        <img className="context-img-only" src={ImgList[0]} alt="" />
       </div>
     </div>
 

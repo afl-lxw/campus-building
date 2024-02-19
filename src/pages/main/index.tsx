@@ -1,6 +1,8 @@
 
 
 import React, { useEffect } from 'react'
+// 引入微信小程序 sdk
+
 import {  SafeArea } from 'antd-mobile'
 import {
   Route,
@@ -24,12 +26,13 @@ const HomePage: React.FC = () => {
   useEffect(() => {
     const values = queryString.parse(location.search);
 
-    if (!values.code) {
-      const redirectUri = encodeURIComponent(window.location.href);  //snsapi_userinfo   snsapi_base
-      window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${config.TestAppID}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect`;
-    } else {
-      console.log('Code:', values.code);
-    }
+    // if (!values.code) {
+    //   const redirectUri = encodeURIComponent(window.location.href);  //snsapi_userinfo   snsapi_base
+    //   window.location.href = `https://open.weixin.qq.com/connect/oauth2/authorize?appid=${config.TestAppID}&redirect_uri=${redirectUri}&response_type=code&scope=snsapi_userinfo&state=STATE#wechat_redirect`;
+    // } else {
+    //   console.log('Code:', values.code);
+    // }
+
   }, [location]);
 
   return (

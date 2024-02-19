@@ -9,7 +9,7 @@ import Publish from '@/pages/publish'
 import Profile from '@/pages/profile'
 import LoginPage from '@/pages/login'
 import Discover from '@/pages/discover'
-
+import DiscoverDetail from '@/pages/discoverDetail'
 import { useAuth } from '@/hooks' // <- 这是一个示例hooks，你可以在这里处理你的认证逻辑
 
 const App: React.FC = () => {
@@ -25,30 +25,21 @@ const App: React.FC = () => {
     <Router>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
-
+        <Route path='discover/:id' element={<DiscoverDetail />} />  // 设置为顶级路由
         <Route path='*' element={<Main />}>
-          {/* 在这里添加 'Home' 页面的子路由 */}
           <Route path='search' element={<Search />}>
-            {/* 在这里添加 'NavTab' 页面的子路由 */}
           </Route>
           <Route path='profile' element={<Profile />}>
-            {/* 在这里添加 'SearchNavTab' 页面的子路由 */}
           </Route>
           <Route path='notice' element={<Notice />}>
-            {/* 在这里添加 'MessageNavTab' 页面的子路由 */}
           </Route>
           <Route path='publish' element={<Publish />}>
-            {/* 在这里添加 'publish' 页面的子路由 */}
           </Route>
           <Route path='discover' element={<Discover />}>
-            {/* 在这里添加 'publish' 页面的子路由 */}
           </Route>
         </Route>
-
       </Routes>
     </Router>
-
- 
   )
 }
 
