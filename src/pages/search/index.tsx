@@ -1,10 +1,19 @@
 import React from "react"
+import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
+const { Search } = Input;
 
-const Search: React.FC = () => {
+
+const SearchPage: React.FC = () => {
   return <>
-    Search
+    <div className="py-2 px-2">
+      <Input
+        variant="filled"
+        suffix={<SearchOutlined />}
+        placeholder="输入搜索..." />
+    </div>
   </>
 }
 
 
-export default Search
+export default SearchPage

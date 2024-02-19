@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Information: React.FC = () => {
   return <>
-    <div className="information-container flex items-center px-4 py-2 bg-slate-200">
+    <div className="information-container flex items-center px-4 py-2 ">
       <div className="user-img ">
         <img src={userImg} className='h-16 w-16 rounded-full' alt="" />
       </div>
